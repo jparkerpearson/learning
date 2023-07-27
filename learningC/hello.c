@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define MAGIC_NUMBER 13
+#define NUM_CHARS_TO_READ 5
 
 int readInputNumber(int something);
 int convertToCelcius(int farhenheit);
@@ -8,8 +8,19 @@ int convertToCelcius(int farhenheit);
 int main(int argc, char *argv[])
 {
 
-   char randomChar = getchar();
-   printf("%c\n", randomChar);
+   char readCharacters[NUM_CHARS_TO_READ];
+   int i = 0;
+
+   for (i = 0; i < NUM_CHARS_TO_READ; i++) {
+      int p = 0;
+      readCharacters[i] = getchar();
+   }
+
+   for (i = 0; i < NUM_CHARS_TO_READ; i++) {
+      printf("%c", readCharacters[i]);
+   }
+   
+   // printf("%c\n", randomChar);
    // int randomNumber = 5;
    // print argc
    // printf("argc = %d\n", argc);
