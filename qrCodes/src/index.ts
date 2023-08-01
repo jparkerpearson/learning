@@ -1,11 +1,11 @@
 import { tunnel } from "./tunnel.js";
 import { startServer } from "./server.js";
 import { generateQrCode } from "./qrCode.js";
+import { hash } from "./crypto.js";
 
 // generateQrCode();
 
-(async () => {
-  console.log("hi");
+async function runQrService() {
   let tunnelAddress = await tunnel();
   // APpend
   tunnelAddress += "/scanQr";
@@ -13,4 +13,10 @@ import { generateQrCode } from "./qrCode.js";
   await generateQrCode(tunnelAddress);
 
   startServer();
+}
+
+(async () => {
+  const name = "Parker";
+  const hashedName = hash(name);
+  console.log(hashedName);
 })();

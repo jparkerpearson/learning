@@ -1,8 +1,8 @@
 import * as QRCode from "qrcode";
 
-export function generateQrCode(secretMsg) {
+export async function generateQrCode(secretMsg) {
   try {
-    QRCode.toFile(
+    await QRCode.toFile(
       "/Users/parker/projects/learning/qrCodes/qrCode.png",
       secretMsg
     );
